@@ -1,0 +1,100 @@
+@use "../abstracts/mixins" as m;
+
+#menu-page {
+  .banner-wrapper {
+    height: 65vh;
+    min-height: 65rem;
+    margin-bottom: 12rem;
+    @include m.media-query(mobile) {
+      height: 50vh;
+      min-height: 45rem;
+      margin-bottom: 8rem;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+#menu {
+  .menu-content {
+    position: relative;
+    max-width: 160rem;
+    width: 95%;
+    margin-inline: auto;
+  }
+  p.intro-text {
+    margin-bottom: 15rem;
+    @include m.media-query(tablet) {
+      margin-bottom: 10rem;
+    }
+    @include m.media-query(mobile) {
+      margin-bottom: 6rem;
+    }
+  }
+  .menu-container {
+    @include m.flex(normal, space-between, row);
+    gap: 5rem;
+    position: relative;
+    min-height: 90vh;
+    margin-inline: 5vw;
+    @include m.media-query(tablet) {
+      flex-wrap: wrap;
+    }
+  }
+  .course-menu-container,
+  .drink-menu-container {
+    max-width: 65rem;
+    padding-bottom: 2rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(3rem);
+    transition: opacity 0.7s ease, transform 0.5s ease;
+    &.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    @include m.media-query(tablet) {
+      max-width: none;
+    }
+    p:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+    p.price-text {
+      margin-top: 2rem;
+    }
+    span {
+      display: block;
+      width: 12rem;
+      height: 0.2rem;
+      margin-block: 4.2rem;
+    }
+    h1 {
+      margin-bottom: 3rem;
+    }
+    h2 {
+      margin-bottom: 2.8rem;
+    }
+  }
+  .watermark-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 99%;
+    height: 99%;
+    opacity: 0.01;
+    pointer-events: none;
+    overflow: hidden;
+    @include m.media-query(tablet) {
+      display: none;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      min-height: 111vh;
+    }
+  }
+}

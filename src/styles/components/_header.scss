@@ -1,0 +1,27 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  nav {
+    @include m.flex(center, space-between, row);
+    flex-wrap: wrap;
+    width: 95%;
+    min-height: 10vh;
+    padding-block: 2rem;
+    margin-inline: auto;
+    .header-logo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .header-link {
+      @include m.media-query(mobile) {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Makes the loading of google fonts non-render blocking -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:wght@300;400;700&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:wght@300;400;700&display=swap"
+        rel="stylesheet"
+        type="text/css"
+      />
+    </noscript>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://npmcdn.com/flatpickr/dist/themes/dark.css"
+    />
+    <link rel="icon" type="image/svg+xml" href="hjort_symbol.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hjort | Reservera</title>
+  </head>
+  <body class="preload">
+    <header>
+      <nav id="top-nav">
+        <button
+          class="burgare-gjord-på-100-procent-svenskt-viltkött"
+          aria-label="Öppna meny"
+          aria-controls="burger-nav"
+          aria-expanded="false"
+        >
+          <div class="line-container">
+            <span class="line 1"></span>
+            <span class="line 2"></span>
+          </div>
+        </button>
+        <a class="header-logo" href="..">Hjort</a>
+        <a class="header-link" href=".">RESERVERA</a>
+      </nav>
+    </header>
+    <nav id="burger-nav">
+      <ul class="burger-nav-links">
+        <li><a href="../meny/">MENY</a></li>
+        <li><a href=".">RESERVERA</a></li>
+      </ul>
+      <footer>
+        <ul>
+          <li>
+            <a href=""><img src="../facebook.svg" alt="facebook ikon" /></a>
+          </li>
+          <li>
+            <a href=""><img src="../instagram.svg" alt="instagram ikon" /></a>
+          </li>
+          <li>
+            <a href=""><img src="../linkedin.svg" alt="linkedin ikon" /></a>
+          </li>
+        </ul>
+        <p>ROSENDALSVÄGEN 25, 115 21 STOCKHOLM, SWEDEN</p>
+      </footer>
+    </nav>
+    <main id="booking-page">
+      <div class="banner-wrapper">
+        <picture>
+          <source type="image/avif" srcset="../booking/reservera_banner.avif" />
+          <source type="image/webp" srcset="../booking/reservera_banner.webp" />
+          <img
+            src="../booking/reservera_banner.jpg"
+            alt="Upplagd rätt med halstrat viltkött, rostad rotsak och färska örter på keramiskt fat, serverad med ätpinnar i trä"
+          />
+        </picture>
+      </div>
+      <div id="booking">
+        <div class="booking-content">
+          <p class="intro-text">
+            Vi välkomnar sällskap på upp till 6 gäster i vår matsal. Nya
+            bokningar släpps den 1:a varje månad klockan 10.00 (CET).
+          </p>
+          <p class="intro-text">
+            <span class="bold"> Öppettider</span> <br />
+            Tisdag – Lördag <br />
+            Lunch från 12.00 <br />
+            Middag från 18.00
+          </p>
+          <p class="intro-text">
+            Det går tyvärr inte att anpassa menyn för att göra den vegansk eller
+            utesluta mjölkprotein, citrus eller ägg.
+          </p>
+          <p class="intro-text">Varmt välkommen till Hjort.</p>
+          <h1 class="booking-page-title">Reservera</h1>
+
+          <form id="booking">
+            <div class="input-row">
+              <div class="input-box">
+                <label for="guestAmount">ANTAL GÄSTER</label>
+                <div class="custom-select">
+                  <select id="guestAmount" name="guestAmount" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                  </select>
+                </div>
+              </div>
+              <div class="input-box">
+                <label for="reservationDate">DATUM</label>
+                <div class="custom-input">
+                  <input
+                    type="text"
+                    id="reservationDate"
+                    name="reservationDate"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="input-box">
+                <label for="time">TID</label>
+                <div class="custom-select">
+                  <select id="time" name="time" required>
+                    <option value="12:15">12:15</option>
+                    <option value="12:30">12:30</option>
+                    <option value="12:45">12:45</option>
+                    <option value="13:00">13:00</option>
+                    <option value="18:00">18:00</option>
+                    <option value="18:15">18:15</option>
+                    <option value="18:30">18:30</option>
+                    <option value="18:45">18:45</option>
+                    <option value="19:00">19:00</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="input-row">
+              <div class="input-box">
+                <label for="firstName">FÖRNAMN</label>
+                <input type="text" id="firstName" name="firstName" required />
+              </div>
+              <div class="input-box">
+                <label for="lastName">EFTERNAMN</label>
+                <input type="text" id="lastName" name="lastName" required />
+              </div>
+            </div>
+            <div class="input-row">
+              <div class="input-box">
+                <label for="phoneNumber">TELEFONNUMMER</label>
+                <input
+                  type="tel"
+                  id="phoneNumber"
+                  name="phoneNumber"
+                  required
+                />
+              </div>
+              <div class="input-box">
+                <label for="email">E-POSTADRESS</label>
+                <input type="text" id="email" name="email" required />
+              </div>
+            </div>
+            <div class="input-row">
+              <div class="input-box">
+                <label for="message">ALLERGIER ELLER ÖNSKEMÅL</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  cols="33"
+                ></textarea>
+              </div>
+            </div>
+            <button type="submit">
+              RESERVERA
+              <div class="loader"></div>
+            </button>
+          </form>
+          <div class="watermark-wrapper">
+            <img src="../hjort_symbol.svg" alt="" aria-hidden="true" />
+          </div>
+        </div>
+      </div>
+    </main>
+    <script type="module">
+      import "@ts/booking/main.ts";
+    </script>
+  </body>
+</html>

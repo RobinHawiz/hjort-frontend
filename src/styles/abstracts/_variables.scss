@@ -1,0 +1,27 @@
+// Colors
+
+$text-color: #f1f2f2;
+$bg-color: #0d0d0d;
+$divider-color: #d9d9d9;
+
+// Font sizes
+
+$h1-font: 4.4rem;
+$h2-font: 2.6rem;
+$header-logo-font: 3.7rem;
+$burger-nav-link-font: 4.4rem;
+$p-large-font: 4.4rem;
+$p-font: 2rem;
+
+$h1-mobile-font: 3rem;
+$h2-mobile-font: 2.3rem;
+$burger-nav-link-mobile-font: 3rem;
+$p-large-mobile-font: 2.5rem;
+$p-mobile-font: 1.8rem;
+
+$breakpoints: (
+  "mobile": 480px,
+  "form-mobile": 720px,
+  "tablet": 1025px,
+  "desktop": 1100px,
+);

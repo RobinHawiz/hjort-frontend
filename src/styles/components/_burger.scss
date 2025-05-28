@@ -1,0 +1,62 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+button.burgare-gjord-på-100-procent-svenskt-viltkött {
+  span {
+    width: 3rem;
+    height: 0.2rem;
+    margin: 0.4rem;
+    display: block;
+    transition: all 0.5s ease;
+  }
+  &.opened span:nth-child(1) {
+    transform: translate(0px, 3px) rotate(45deg);
+  }
+  &.opened span:nth-child(2) {
+    transform: translate(0px, -3px) rotate(-45deg);
+  }
+}
+
+#burger-nav {
+  @include m.flex(center, normal, column);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease,
+    background-color 0.5s cubic-bezier(0.17, 0.67, 0.83, 0.67),
+    backdrop-filter 0.5s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+  z-index: 10;
+  &.opened {
+    opacity: 1;
+    visibility: visible;
+  }
+  ul.burger-nav-links {
+    @include m.flex(center, center, column);
+    height: 100%;
+    li:not(:last-child) {
+      margin-bottom: 5rem;
+      @include m.media-query(mobile) {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+  footer {
+    @include m.flex(center, normal, column);
+    gap: 2rem;
+    margin-bottom: 2rem;
+    ul {
+      @include m.flex(center, space-between, row);
+      max-width: 30rem;
+      width: 60%;
+    }
+    p {
+      text-align: center;
+      margin-inline: 2rem;
+    }
+    img {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,138 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+  font-family: "Abril Fatface", serif;
+  font-size: v.$h1-font;
+  @include m.media-query(mobile) {
+    font-size: v.$h1-mobile-font;
+  }
+}
+
+h1.booking-page-title {
+  font-family: "Montserrat", sans-serif;
+}
+
+h2 {
+  font-size: v.$h2-font;
+  @include m.media-query(mobile) {
+    font-size: v.$h2-mobile-font;
+  }
+}
+
+p {
+  font-size: v.$p-font;
+  @include m.media-query(mobile) {
+    font-size: v.$p-mobile-font;
+  }
+}
+
+p.intro-text {
+  font-size: v.$p-large-font;
+  line-height: 1.45;
+  @include m.media-query(tablet) {
+    font-size: v.$p-large-mobile-font;
+  }
+}
+
+.bold {
+  font-weight: 700;
+}
+
+/* Header stylings */
+
+.header-logo {
+  font-family: "Abril Fatface", serif;
+  font-size: v.$header-logo-font;
+}
+
+.header-link {
+  font-weight: 300;
+  font-size: 1.6rem;
+  letter-spacing: 0.3rem;
+}
+
+/* Burger menu stylings */
+
+#burger-nav {
+  font-size: v.$burger-nav-link-font;
+  @include m.media-query(mobile) {
+    font-size: v.$burger-nav-link-mobile-font;
+  }
+  footer {
+    p {
+      font-weight: 300;
+    }
+  }
+}
+
+/* Loader menu stylings */
+
+.loader-container {
+  @include m.flex(normal, normal, row);
+  p.loader-text {
+    line-height: normal;
+    font-size: v.$p-large-font;
+    @include m.media-query(tablet) {
+      font-size: v.$p-large-mobile-font;
+    }
+  }
+}
+
+#menu-page {
+  p.loader-text {
+    line-height: normal;
+  }
+}
+
+/* Home page stylings */
+
+#home-page {
+  p {
+    line-height: 1.45;
+  }
+}
+
+/* Menu page stylings */
+
+#menu-page {
+  p {
+    line-height: 1.65;
+  }
+}
+
+/* Booking page stylings */
+
+#booking-page {
+  h1 {
+    @include m.media-query(tablet) {
+      font-size: v.$p-large-mobile-font;
+    }
+  }
+}
+
+form {
+  font-size: v.$p-font;
+  letter-spacing: 0.2rem;
+  @include m.media-query(tablet) {
+    font-size: v.$p-mobile-font;
+  }
+  input,
+  select,
+  textarea,
+  button {
+    font-size: v.$p-font;
+    letter-spacing: 0.2rem;
+    font-family: "Montserrat", sans-serif;
+    @include m.media-query(tablet) {
+      font-size: v.$p-mobile-font;
+    }
+  }
+  label {
+    line-height: 1.45;
+  }
+}

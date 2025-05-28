@@ -1,0 +1,116 @@
+@use "../abstracts/variables" as v;
+
+body {
+  color: v.$text-color;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  color: v.$text-color;
+  text-decoration: none;
+}
+
+.error {
+  background-color: rgba(255, 51, 51, 0.9);
+  color: v.$bg-color;
+}
+
+/* Header stylings */
+
+header {
+  background: linear-gradient(to bottom, black 0%, transparent 100%);
+}
+
+button.burgare-gjord-på-100-procent-svenskt-viltkött {
+  span {
+    background-color: v.$text-color;
+  }
+}
+
+/* Burger menu stylings */
+
+#burger-nav {
+  &.opened {
+    background-color: rgba($color: #000000, $alpha: 0.7);
+    backdrop-filter: blur(10px);
+  }
+}
+
+/* Menu page stylings */
+
+#menu-page {
+  background-color: v.$bg-color;
+}
+
+.course-menu-container,
+.drink-menu-container {
+  span {
+    background-color: v.$divider-color;
+  }
+}
+
+/* Booking page stylings */
+
+#booking-page {
+  background-color: v.$bg-color;
+  form {
+    input,
+    select,
+    textarea {
+      background-color: transparent;
+      color: v.$text-color;
+      border: 0.1rem solid v.$text-color;
+    }
+    select {
+      background-color: v.$bg-color;
+    }
+    button[type="submit"] {
+      background-color: v.$text-color;
+    }
+  }
+}
+
+/* Flatpickr page stylings */
+
+.flatpickr-calendar {
+  background-color: v.$bg-color;
+  color: v.$text-color;
+  border: none;
+}
+
+.flatpickr-day.flatpickr-disabled {
+  color: #3f4458;
+}
+
+.flatpickr-day.selected,
+.flatpickr-day.prevMonthDay.selected {
+  background-color: #3f4458;
+  border-color: v.$text-color;
+}
+
+.flatpickr-day.today {
+  border-color: v.$text-color;
+}
+
+.flatpickr-weekdaycontainer .flatpickr-weekday,
+.flatpickr-months .flatpickr-month,
+.flatpickr-current-month .flatpickr-monthDropdown-months {
+  background-color: v.$bg-color;
+}
+
+.flatpickr-current-month select {
+  background-color: v.$bg-color !important;
+}
+
+.flatpickr-monthDropdown-months .flatpickr-monthDropdown-month {
+  background-color: transparent !important;
+}

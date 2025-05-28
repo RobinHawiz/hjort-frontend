@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Makes the loading of google fonts non-render blocking -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:wght@300;400;700&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:wght@300;400;700&display=swap"
+        rel="stylesheet"
+        type="text/css"
+      />
+    </noscript>
+    <link rel="icon" type="image/svg+xml" href="hjort_symbol.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hjort | Meny</title>
+  </head>
+  <body class="preload">
+    <header>
+      <nav id="top-nav">
+        <button
+          class="burgare-gjord-på-100-procent-svenskt-viltkött"
+          aria-label="Öppna meny"
+          aria-controls="burger-nav"
+          aria-expanded="false"
+        >
+          <div class="line-container">
+            <span class="line 1"></span>
+            <span class="line 2"></span>
+          </div>
+        </button>
+        <a class="header-logo" href="..">Hjort</a>
+        <a class="header-link" href="../reservera/">RESERVERA</a>
+      </nav>
+    </header>
+    <nav id="burger-nav">
+      <ul class="burger-nav-links">
+        <li><a href=".">MENY</a></li>
+        <li><a href="../reservera/">RESERVERA</a></li>
+      </ul>
+      <footer>
+        <ul>
+          <li>
+            <a href=""><img src="../facebook.svg" alt="facebook ikon" /></a>
+          </li>
+          <li>
+            <a href=""><img src="../instagram.svg" alt="instagram ikon" /></a>
+          </li>
+          <li>
+            <a href=""><img src="../linkedin.svg" alt="linkedin ikon" /></a>
+          </li>
+        </ul>
+        <p>ROSENDALSVÄGEN 25, 115 21 STOCKHOLM, SWEDEN</p>
+      </footer>
+    </nav>
+    <main id="menu-page">
+      <div class="banner-wrapper">
+        <picture>
+          <source type="image/avif" srcset="../menu/meny_banner.avif" />
+          <source type="image/webp" srcset="../menu/meny_banner.webp" />
+          <img
+            src="../menu/meny_banner.jpg"
+            alt="Upplagd rätt med halstrat viltkött, rostad rotsak och färska örter på keramiskt fat, serverad med ätpinnar i trä"
+          />
+        </picture>
+      </div>
+      <div id="menu">
+        <div class="menu-content">
+          <p class="intro-text">
+            Menyn på Hjort utvecklas ständigt i takt med årstiderna och
+            tillgången på råvaror. Här hittar du våra aktuella menyer och
+            dryckesval.
+          </p>
+          <div class="menu-container">
+            <div class="loader-container">
+              <p class="loader-text">Hämtar menyer</p>
+              <div class="loader"></div>
+            </div>
+            <div class="course-menu-container"></div>
+            <div class="drink-menu-container"></div>
+            <div class="watermark-wrapper">
+              <img src="../hjort_symbol.svg" alt="" aria-hidden="true" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script type="module">
+      import "@ts/menu/main.ts";
+    </script>
+  </body>
+</html>

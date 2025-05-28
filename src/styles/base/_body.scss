@@ -1,0 +1,5 @@
+// https://stackoverflow.com/a/38296629/30307124
+// Prevents transitions from running on page load. Remember to remove the preload class afterwards.
+body.preload * {
+  transition: none !important;
+}
