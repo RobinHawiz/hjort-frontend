@@ -48,14 +48,15 @@ async function handleFormSubmit(e: Event): Promise<void> {
     const api = new ReservationAPI();
     btn.disable();
     btn.showLoader();
-    await api.insert(payload);
-    btn.enable();
-    btn.hideLoader();
-    form.reset();
-    // Defer the alert to ensure DOM updates from clearFieldErrors are applied before blocking the UI
-    setTimeout(() => {
-      window.alert("Reservation has been added!");
-    }, 1);
+    setTimeout(async () => {
+      await api.insert(payload);
+      btn.enable();
+      btn.hideLoader();
+      form.reset();
+      setTimeout(() => {
+        window.alert("Reservation has been added!");
+      }, 1);
+    }, 400);
   } catch (error) {
     btn.enable();
     btn.hideLoader();
@@ -117,8 +118,7 @@ function validateForm(e: Event): boolean {
   // Reset validation state as the user types or changes values.
 
   resetValidationState(guestAmountSelect);
-  resetValidationState(reservationDateSelect);
-  resetValidationState(timeSelect);
+  resetDateTimeValidationState(reservationDateSelect, timeSelect);
   resetValidationState(firstNameInput);
   resetValidationState(lastNameInput);
   resetValidationState(phoneNumberInput);
@@ -209,6 +209,20 @@ function resetValidationState(
 ): void {
   elem.addEventListener("input", () => {
     validateField(elem, "");
+  });
+}
+
+function resetDateTimeValidationState(
+  dateElem: HTMLInputElement | HTMLSelectElement,
+  timeElem: HTMLInputElement | HTMLSelectElement
+): void {
+  dateElem.addEventListener("input", () => {
+    validateField(dateElem, "");
+    validateField(timeElem, "");
+  });
+  timeElem.addEventListener("input", () => {
+    validateField(dateElem, "");
+    validateField(timeElem, "");
   });
 }
 
