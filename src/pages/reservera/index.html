@@ -34,10 +34,10 @@
           aria-controls="burger-nav"
           aria-expanded="false"
         >
-          <div class="line-container">
+          <span class="line-container">
             <span class="line 1"></span>
             <span class="line 2"></span>
-          </div>
+          </span>
         </button>
         <a class="header-logo" href="..">Hjort</a>
         <a class="header-link" href=".">RESERVERA</a>
@@ -102,12 +102,13 @@
           <p class="intro-text">Varmt välkommen till Hjort.</p>
           <h1 class="booking-page-title">Reservera</h1>
 
-          <form id="booking">
+          <form id="reservation">
             <div class="input-row">
               <div class="input-box">
                 <label for="guestAmount">ANTAL GÄSTER</label>
                 <div class="custom-select">
                   <select id="guestAmount" name="guestAmount" required>
+                    <option value="">--</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -132,6 +133,7 @@
                 <label for="time">TID</label>
                 <div class="custom-select">
                   <select id="time" name="time" required>
+                    <option value="">--</option>
                     <option value="12:15">12:15</option>
                     <option value="12:30">12:30</option>
                     <option value="12:45">12:45</option>
@@ -183,7 +185,7 @@
             </div>
             <button type="submit">
               RESERVERA
-              <div class="loader"></div>
+              <span class="loader"></span>
             </button>
           </form>
           <div class="watermark-wrapper">
