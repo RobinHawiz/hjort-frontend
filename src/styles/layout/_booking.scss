@@ -107,6 +107,12 @@ form {
   .custom-input::after {
     content: url("../assets/calendar.svg");
   }
+  #reservationDate {
+    padding-right: 3rem;
+    @include m.media-query(mobile) {
+      padding-right: 1rem;
+    }
+  }
   button[type="submit"] {
     @include m.flex(center, space-between, row);
     gap: 1rem;

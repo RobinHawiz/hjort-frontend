@@ -137,7 +137,7 @@ function validateForm(e: Event): boolean {
   ) {
     validateField(
       guestAmountSelect,
-      "Antalet gäster som får bokas per reservation är mellan 1 till 6 gäster."
+      "Antalet gäster per bokning måste vara mellan 1 och 6."
     );
     formIsValid = false;
   }
@@ -145,7 +145,7 @@ function validateForm(e: Event): boolean {
   if (isSelectedDateValid(reservationDateSelect.value)) {
     validateField(
       reservationDateSelect,
-      "Bokningens datum får inte vara före dagens datum."
+      "Bokningsdatumet får inte vara tidigare än dagens datum."
     );
     formIsValid = false;
   }
@@ -153,7 +153,7 @@ function validateForm(e: Event): boolean {
   if (isSelectedTimeValid(reservationDateSelect.value, timeSelect.value)) {
     validateField(
       timeSelect,
-      "Tiden för bokningen får inte vara före det nuvarande klockslaget."
+      "Den bokade tiden får inte vara tidigare än aktuell tidpunkt."
     );
     formIsValid = false;
   }
@@ -201,7 +201,6 @@ function validateForm(e: Event): boolean {
     );
     formIsValid = false;
   }
-
   return formIsValid;
 }
 
@@ -227,7 +226,7 @@ function isSelectedTimeValid(
   selectedDateStr: string,
   selectedTimeStr: string
 ): boolean {
-  return new Date(selectedDateStr + selectedTimeStr) < new Date();
+  return new Date(`${selectedDateStr} ${selectedTimeStr}`) < new Date();
 }
 
 function validateField(
