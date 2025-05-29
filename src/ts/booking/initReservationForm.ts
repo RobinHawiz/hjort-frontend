@@ -194,7 +194,7 @@ function validateForm(e: Event): boolean {
     formIsValid = false;
   }
 
-  if (!(messageInput.value.length >= 1 && messageInput.value.length <= 1000)) {
+  if (!(messageInput.value.length <= 1000)) {
     validateField(
       messageInput,
       "Meddelandet får som högst vara 1000 karaktärer långt."
