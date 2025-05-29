@@ -5,7 +5,9 @@ import { fetchData } from "@ts/utils/api";
  * Provides methods to interact with the Reservation API.
  */
 export class ReservationAPI {
-  constructor(private readonly apiUrl = "http://localhost:4000/api/public") {}
+  constructor(
+    private readonly apiUrl = "https://hjort-backend.azurewebsites.net/api/public"
+  ) {}
 
   /**
    * Sends a new reservation entry to the API via POST /api/public/reservations

@@ -6,9 +6,9 @@
     min-height: 100vh;
     padding-block: calc(10vh + 4rem);
     background-image: image-set(
-      "home/hero_bg.avif" type("image/avif"),
-      "home/hero_bg.webp" type("image/webp"),
-      "home/hero_bg.jpg" type("image/jpeg")
+      "../home/hero_bg.avif" type("image/avif"),
+      "../home/hero_bg.webp" type("image/webp"),
+      "../home/hero_bg.jpg" type("image/jpeg")
     );
     background-size: auto 100vh;
     background-position: center;
@@ -33,9 +33,9 @@
   @include m.flex(normal, center, column);
   min-height: 100vh;
   background-image: image-set(
-    "home/bakom_hjorten_bg.avif" type("image/avif"),
-    "home/bakom_hjorten.webp" type("image/webp"),
-    "home/bakom_hjorten.jpg" type("image/jpeg")
+    "../home/bakom_hjorten_bg.avif" type("image/avif"),
+    "../home/bakom_hjorten.webp" type("image/webp"),
+    "../home/bakom_hjorten.jpg" type("image/jpeg")
   );
   background-position: cover;
   background-repeat: no-repeat;

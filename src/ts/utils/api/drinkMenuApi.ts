@@ -6,7 +6,9 @@ import { fetchData } from "@ts/utils/api";
  * Provides methods to interact with the Drink Menu API.
  */
 export class DrinkMenuAPI {
-  constructor(private readonly apiUrl = "http://localhost:4000/api/public") {}
+  constructor(
+    private readonly apiUrl = "https://hjort-backend.azurewebsites.net/api/public"
+  ) {}
 
   /**
    * Retrieves all drink menu entries via GET /api/public/drink-menu

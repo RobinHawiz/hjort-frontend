@@ -94,7 +94,7 @@ form {
   }
   .custom-select::after,
   .custom-input::after {
-    content: url("../chevron_down.svg");
+    content: url("../assets/chevron_down.svg");
     display: block;
     position: absolute;
     width: 2.4rem;
@@ -105,7 +105,7 @@ form {
     pointer-events: none;
   }
   .custom-input::after {
-    content: url("../calendar.svg");
+    content: url("../assets/calendar.svg");
   }
   button[type="submit"] {
     @include m.flex(center, space-between, row);
