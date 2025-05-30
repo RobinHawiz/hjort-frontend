@@ -39,8 +39,29 @@ p.intro-text {
   }
 }
 
+input,
+select,
+textarea,
+button {
+  font-size: v.$p-font;
+  letter-spacing: 0.2rem;
+  font-family: "Montserrat", sans-serif;
+  @include m.media-query(tablet) {
+    font-size: v.$p-mobile-font;
+  }
+}
+
+label {
+  line-height: 1.45;
+}
+
 .bold {
   font-weight: 700;
+}
+
+.italic {
+  font-style: italic;
+  font-weight: 300;
 }
 
 /* Header stylings */
@@ -89,6 +110,26 @@ p.intro-text {
   }
 }
 
+/* Confirmation stylings */
+
+.confirmation-overlay-content {
+  p {
+    line-height: 1.45;
+  }
+  button {
+    line-height: 1.45;
+    font-size: v.$p-font;
+  }
+  @include m.media-query(tablet) {
+    p {
+      font-size: 1.6rem;
+    }
+    button {
+      font-size: 1.6rem;
+    }
+  }
+}
+
 /* Home page stylings */
 
 #home-page {
@@ -120,19 +161,5 @@ form {
   letter-spacing: 0.2rem;
   @include m.media-query(tablet) {
     font-size: v.$p-mobile-font;
-  }
-  input,
-  select,
-  textarea,
-  button {
-    font-size: v.$p-font;
-    letter-spacing: 0.2rem;
-    font-family: "Montserrat", sans-serif;
-    @include m.media-query(tablet) {
-      font-size: v.$p-mobile-font;
-    }
-  }
-  label {
-    line-height: 1.45;
   }
 }

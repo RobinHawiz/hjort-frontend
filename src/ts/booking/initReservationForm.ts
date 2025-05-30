@@ -4,6 +4,7 @@ import { isResponseError, handleFormErrors } from "@ts/utils/error";
 import { SubmitButton } from "@ts/utils/ui";
 import { createReservationPayload } from "./createReservationPayload";
 import { isHtmlElement } from "@ts/utils/dom";
+import { createConfirmationOverlay } from "./createConfirmationOverlay";
 
 /**
  * Initializes the add page form by attaching a submit handler.
@@ -53,9 +54,8 @@ async function handleFormSubmit(e: Event): Promise<void> {
       btn.enable();
       btn.hideLoader();
       form.reset();
-      setTimeout(() => {
-        window.alert("Reservation has been added!");
-      }, 1);
+      const overlay = createConfirmationOverlay(formData);
+      document.body.appendChild(overlay);
     }, 400);
   } catch (error) {
     btn.enable();
