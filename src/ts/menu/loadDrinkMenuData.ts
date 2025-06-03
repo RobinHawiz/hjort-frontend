@@ -16,21 +16,19 @@ import { isResponseError, handleGlobalError } from "@ts/utils/error";
  * @returns A Promise resolving to an array of DrinkMenuObject entries.
  */
 export async function loadDrinkMenuData(): Promise<Array<drinkMenuObject>> {
-  const output = Array<drinkMenuObject>();
   const drinkMenues = await getDrinkMenuEntries();
   if (!drinkMenues) return [];
   else {
-    await Promise.all(
+    return (await Promise.all(
       drinkMenues.map(async (menu) => {
         const drinks = await getDrinkEntries(menu.id);
         if (!drinks) return;
         else {
-          output.push({ menu, drinks });
+          return { menu, drinks };
         }
       })
-    );
+    )) as Array<drinkMenuObject>;
   }
-  return output;
 }
 
 export async function getDrinkMenuEntries(): Promise<Array<DrinkMenuEntity> | null> {
