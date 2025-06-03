@@ -7,7 +7,7 @@ import { isHtmlElement } from "@ts/utils/dom";
 import { createConfirmationOverlay } from "./createConfirmationOverlay";
 
 /**
- * Initializes the add page form by attaching a submit handler.
+ * Initializes the reservera page form by attaching a submit handler.
  * Responsible for wiring up form submission behavior for creating new reservations.
  */
 export function initReservationForm(): void {
@@ -25,7 +25,7 @@ export function initReservationForm(): void {
 /**
  * Handles the submission of the reservation form.
  * On valid input, inserts the data and shows a confirmation.
- * On validation failure, displays field-specific validation error messages.
+ * On validation failure, displays a validation error messages.
  *
  * @param e - The form submission event
  */
@@ -70,16 +70,16 @@ async function handleFormSubmit(e: Event): Promise<void> {
 }
 
 /**
- * A very brute force way of enforcing form validation for all input and select elements.
+ * Performs manual validation on all relevant form fields before submission.
+ *
  * @param e The form submission event
- * @returns
+ * @returns true if all fields are valid, otherwise false
  */
 
 function validateForm(e: Event): boolean {
   e.preventDefault();
 
   const form: HTMLFormElement = document.querySelector("form")!;
-  form.addEventListener("submit", validateForm);
 
   // Select form input and select elements.
 

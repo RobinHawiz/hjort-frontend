@@ -15,12 +15,10 @@ export function displayDrinkMenus(
 
   if (!isHtmlElement(elemToAppend, DRINK_MENU_SELECTOR)) return;
 
-  let index = 0;
   let addDivider = true;
-  drinkMenuObjects.forEach((obj) => {
-    index++;
+  drinkMenuObjects.forEach((obj, i) => {
     // Don't add a divider if we're rendering the last drink menu, otherwise keep adding dividers between menues.
-    addDivider = index === drinkMenuObjects.length ? false : true;
+    addDivider = i + 1 === drinkMenuObjects.length ? false : true;
     elemToAppend.appendChild(
       createDrinkMenuHtml(obj.menu, obj.drinks, addDivider)
     );

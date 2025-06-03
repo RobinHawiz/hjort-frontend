@@ -22,7 +22,7 @@ export type CourseEntity = {
 /**
  * Represents both the course menu and it's associated courses.
  */
-export type courseMenuObject = {
+export type CourseMenuObject = {
   menu: CourseMenuEntity;
   courses: Array<CourseEntity>;
 };

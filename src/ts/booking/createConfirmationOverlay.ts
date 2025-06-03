@@ -1,3 +1,6 @@
+/**
+ * Builds a confirmation overlay DOM fragment after a successful reservation.
+ */
 export function createConfirmationOverlay(
   formData: FormData
 ): DocumentFragment {

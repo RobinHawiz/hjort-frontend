@@ -1,4 +1,4 @@
-import { courseMenuObject } from "@ts/types";
+import { CourseMenuObject } from "@ts/types";
 import { isHtmlElement } from "@ts/utils/dom";
 import { createCourseMenuHtml } from "./createCourseMenuHtml";
 
@@ -8,7 +8,7 @@ import { createCourseMenuHtml } from "./createCourseMenuHtml";
  * If entries are available, they are appended to the element with the class "course-menu-container".
  */
 export function displayCourseMenus(
-  courseMenuObjects: Array<courseMenuObject>
+  courseMenuObjects: Array<CourseMenuObject>
 ): void {
   const COURSE_MENU_SELECTOR = ".course-menu-container";
   const elemToAppend = document.querySelector(COURSE_MENU_SELECTOR);
