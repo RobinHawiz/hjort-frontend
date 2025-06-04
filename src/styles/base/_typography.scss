@@ -45,6 +45,7 @@ textarea,
 button {
   font-size: v.$p-font;
   letter-spacing: 0.2rem;
+  font-weight: 400;
   font-family: "Montserrat", sans-serif;
   @include m.media-query(tablet) {
     font-size: v.$p-mobile-font;

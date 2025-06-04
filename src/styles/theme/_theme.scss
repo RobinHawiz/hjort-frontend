@@ -114,6 +114,7 @@ button.burgare-gjord-på-100-procent-svenskt-viltkött {
       background-color: v.$bg-color;
     }
     button[type="submit"] {
+      color: v.$bg-color;
       background-color: v.$text-color;
     }
   }
